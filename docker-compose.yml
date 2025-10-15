@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: g42.ai-interview-test-task
+    command: ["python", "manage.py", "run-server"]
+    working_dir: /opt/app
+    environment:
+      - PYTHONPATH=/opt/app
+    ports:
+      - "8200:8200"
+      - "5678:5678"  # debugger
+    volumes:
+      - .:/opt/app
+      - /opt/app/.venv

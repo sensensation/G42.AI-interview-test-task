@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: uv-ruff-format
+        name: uv run ruff format
+        entry: uv run ruff format
+        language: system
+        types: [python]
+      - id: uv-ruff-format-check
+        name: uv run ruff format --check
+        entry: uv run ruff format --check
+        language: system
+        types: [python]
+      - id: uv-ruff-check
+        name: uv run ruff check
+        entry: uv run ruff check
+        language: system
+        types: [python]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy

@@ -1,0 +1,65 @@
+[project]
+name = "G42-test-task"
+version = "1.0.0"
+description = "G42.ai-interview-test-task application"
+requires-python = ">=3.13,<3.14"
+
+dependencies = [
+    "fastapi==0.116.1",
+    "dependency-injector==4.48.1",
+    "pydantic==2.11.7",
+    "pydantic-settings==2.10.1",
+    "python-multipart==0.0.9",
+    "uvicorn==0.35.0",
+    "typer==0.19.2",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "RUF001", "RUF002", "RUF100",
+  "D100", "D101", "D102", "D103", "D104", "D105", "D107", "D203", "D213",
+  "ANN201", "ANN204", "ANN401",
+  "COM812",
+  "D400",
+  "EM101", "EM102",
+  "ERA001",
+  "F821",
+  "FIX002",
+  "G004",
+  "INP001",
+  "PLR2004",
+  "S101",
+  "TD002", "TD003",
+  "TRY003",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+norecursedirs = ['.*', '__pycache__', 'venv']
+
+[tool.mypy]
+python_version = "3.13"
+exclude = ["venv", ".venv", "tests"]
+
+[dependency-groups]
+dev = [
+    "pre-commit==4.3.0",
+    "pytest==8.4.2",
+    "pytest-asyncio==0.23.7",
+    "httpx==0.27.0",
+    "ruff==0.6.9",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+combine-as-imports = true
+force-sort-within-sections = true

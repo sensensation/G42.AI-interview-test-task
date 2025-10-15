@@ -1,0 +1,36 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Envs
+.venv*/ 
+venv*/ 
+env*/ 
+ENV*/ 
+dev_venv*/ 
+
+# Build/dist
+build/ dist/ wheels/
+.eggs/ *.egg-info/ .installed.cfg
+
+# Caches & tests
+.mypy_cache/ .pytest_cache/ .ruff_cache/
+.hypothesis/ .tox/ .cache/
+.coverage htmlcov/
+
+# Logs & local DBs
+*.log
+*.sqlite* *.db
+
+# Editors / OS
+.idea/ .vscode/
+*.swp *.swo
+.DS_Store
+
+# Docker/local config
+*.env
+config.json
+!.env.example
+!.env.sample
+docker-compose.override.yml

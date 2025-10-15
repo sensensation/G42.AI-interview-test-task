@@ -1,0 +1,13 @@
+{
+  "api": {
+    "PUBLIC_PREFIX": "/api/vote_app",
+    "INTERNAL_PREFIX": "/api/internal",
+    "DOCS_ENABLED": true,
+    "DOCS_VERSION": "2.0.1"
+  },
+  "normalizer": {
+    "base_year": 1900,
+    "default_country_code": "971",
+    "default_year_pivot": 25
+  }
+}
